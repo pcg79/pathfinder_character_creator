@@ -34,7 +34,7 @@ class DecksController < ApplicationController
   end
 
   def filter_cards
-    q = "%#{params[:q]}%"
+    q = "%#{params[:q].gsub(/ /, '%')}%"
 
     cards = Card.joins(:adventure_deck).joins(:card_type).where(["cards.name like ? OR adventure_decks.number like ? OR card_types.name like ?", q, q, q])
 
