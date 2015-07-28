@@ -8,6 +8,12 @@ require 'csv'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+players = %w(Pat Ethan)
+
+players.each do |player|
+  Player.create name: player
+end
+
 card_types = %w(Weapon Spell Armor Item Ally Blessing Loot)
 
 card_types.each do |type|
@@ -54,10 +60,12 @@ characters.each do |character|
 end
 
 CSV.foreach('./db/PACG_SS_cards.csv', headers: true) do |line|
-  name, set, _, type = line.to_a
+  name = line['Name']
+  set  = line['Set']
+  type = line['Type']
+
   deck = AdventureDeck.find_or_create_by number: set
+  card_type = CardType.find_or_create_by name: type
 
-  card_type = CardType.find_by_name type
-
-  Card.create name: name, card_type: card_type, adventure_deck: deck
+  Card.find_or_create_by name: name, card_type: card_type, adventure_deck: deck
 end
