@@ -5,7 +5,7 @@
 div.card-list {
   width: 45%;
   height: 600px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 div#all-cards {
@@ -14,4 +14,9 @@ div#all-cards {
 
 div#deck-cards {
   float: right;
+}
+
+div#card-list-filter {
+  width: 45%;
+  margin-bottom: 1em;
 }

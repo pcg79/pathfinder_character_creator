@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_filter :find_deck, only: [ :show, :add_card, :remove_card ]
+  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards ]
   before_filter :find_card, only: [ :add_card, :remove_card ]
 
   def index
@@ -22,8 +22,6 @@ class DecksController < ApplicationController
   end
 
   def add_card
-    puts "*** @card = #{@card.inspect}"
-    puts "*** @deck.cards.inspect = #{@deck.cards.inspect}"
     @deck.cards << @card
 
     render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' }
@@ -33,6 +31,14 @@ class DecksController < ApplicationController
     @deck.card_lists.where(card_id: @card.id).first.destroy
 
     render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' }
+  end
+
+  def filter_cards
+    q = "%#{params[:q]}%"
+
+    cards = Card.joins(:adventure_deck).joins(:card_type).where(["cards.name like ? OR adventure_decks.number like ? OR card_types.name like ?", q, q, q])
+
+    render partial: 'card_list', object: cards, locals: { action: 'add' }
   end
 
   private

@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     member do
       post 'add_card'
       post 'remove_card'
+      get  'filter_cards'
     end
   end
+
+  resources :cards
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

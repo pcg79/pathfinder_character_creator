@@ -2,6 +2,10 @@
   <%= @deck.character.name %> Played By <%= @deck.player.name %>
 </p>
 
+<div id="card-list-filter" class="input-group input-group-lg">
+  <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
+</div>
+
 <div id="all-cards" class="card-list">
   <div class="list-group">
     <%= render partial: 'card_list', object: Card.all, locals: { action: 'add' } %>

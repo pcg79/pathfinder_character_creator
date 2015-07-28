@@ -16,3 +16,15 @@ $('div').on 'dblclick', 'a.list-group-item', (event) ->
 $('div').on 'click', 'a.list-group-item', (event) ->
   event.preventDefault
   false
+
+$('input#card-list-filter').on 'keyup', (event) ->
+  $this = $(this)
+
+  delay ->
+    console.log "$this", $this
+    console.log "$this.val", $this.val()
+
+    $.get $this.data('filter-path'), q: $this.val(), (data) ->
+      $('div#all-cards .list-group').html(data)
+
+  , 250

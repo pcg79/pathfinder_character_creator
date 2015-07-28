@@ -16,3 +16,11 @@
 //= require_tree .
 
 //= require bootstrap.min
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
