@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727235836) do
+ActiveRecord::Schema.define(version: 20150728005533) do
 
   create_table "adventure_decks", force: :cascade do |t|
     t.string   "number",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "card_lists", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "deck_id"
+  end
+
+  add_index "card_lists", ["card_id"], name: "index_card_lists_on_card_id"
+  add_index "card_lists", ["deck_id"], name: "index_card_lists_on_deck_id"
 
   create_table "card_types", force: :cascade do |t|
     t.string   "name",       null: false
@@ -48,6 +56,22 @@ ActiveRecord::Schema.define(version: 20150727235836) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  create_table "decks", force: :cascade do |t|
+    t.integer  "character_id"
+    t.integer  "player_id"
+    t.integer  "weapon_count"
+    t.integer  "spell_count"
+    t.integer  "armor_count"
+    t.integer  "item_count"
+    t.integer  "ally_count"
+    t.integer  "blessing_count"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "decks", ["character_id"], name: "index_decks_on_character_id"
+  add_index "decks", ["player_id"], name: "index_decks_on_player_id"
 
   create_table "players", force: :cascade do |t|
     t.string   "name",       null: false

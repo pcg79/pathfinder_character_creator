@@ -1,6 +1,6 @@
-class CreateCardsDecks < ActiveRecord::Migration
+class CreateCardLists < ActiveRecord::Migration
   def change
-    create_table :cards_decks do |t|
+    create_table :card_lists do |t|
       t.references :card, index: true, foreign_key: true
       t.references :deck, index: true, foreign_key: true
     end

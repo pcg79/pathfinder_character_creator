@@ -2,7 +2,8 @@ class Deck < ActiveRecord::Base
   belongs_to :character
   belongs_to :player
 
-  has_and_belongs_to_many :cards
+  has_many :card_lists
+  has_many :cards, through: :card_lists
 
   before_create :set_default_card_limits_from_character
 
