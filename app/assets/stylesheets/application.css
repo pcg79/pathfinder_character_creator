@@ -14,3 +14,10 @@
  *= require_self
  *= require bootstrap
  */
+
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+}

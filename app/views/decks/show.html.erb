@@ -1,0 +1,17 @@
+<p class="lead">
+  <%= @deck.character.name %> Played By <%= @deck.player.name %>
+</p>
+
+<div id="all-cards" class="card-list">
+  <div class="list-group">
+    <%= render partial: 'card_list', object: Card.all, locals: { action: 'add' } %>
+  </div>
+</div>
+
+
+<div id="deck-cards" class="card-list">
+  <div class="list-group">
+    <%= render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' } %>
+  </div>
+
+</div>

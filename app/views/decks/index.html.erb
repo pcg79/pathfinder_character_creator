@@ -1,0 +1,20 @@
+<%= link_to "Create new Deck", new_deck_path %>
+
+<%- if @decks.present? %>
+  <div class="panel panel-default">
+    <table class="table">
+      <tr>
+        <th>Player</th>
+        <th>Character</th>
+      </tr>
+      <%- @decks.each do |deck| %>
+        <tr>
+          <td><%= deck.player.name %> </td>
+          <td><%= link_to deck.character.name, deck_path(deck) %> </td>
+        </tr>
+      <%- end -%>
+    </table>
+  </div>
+<%- else -%>
+  <p>You have no decks created.</p>
+<%- end -%>

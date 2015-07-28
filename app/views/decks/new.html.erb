@@ -1,0 +1,14 @@
+Create a new deck!  First choose a player and a character.  You'll get to add cards later.
+
+<%= form_for @deck do |f| %>
+  <p>Player</p>
+  <%= collection_select(:deck, :player_id, Player.all, :id, :name, prompt: true) %>
+
+  <p>Character</p>
+  <%= collection_select(:deck, :character_id, Character.all, :id, :name, prompt: true) %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
