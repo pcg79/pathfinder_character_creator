@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  card_type_id: 
+  adventure_deck_id: 
+  text: MyText
+
+two:
+  name: MyString
+  card_type_id: 
+  adventure_deck_id: 
+  text: MyText
