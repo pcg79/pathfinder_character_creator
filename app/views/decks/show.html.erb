@@ -2,20 +2,88 @@
   <%= @deck.character.name %> Played By <%= @deck.player.name %>
 </p>
 
-<div id="card-list-filter" class="input-group input-group-lg">
-  <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
-</div>
+<div id="deck-info">
+  <div id="card-limits" class="panel panel-default">
+    <div class="panel-heading">Card Limits</div>
+    <table class="table">
+      <tr>
+        <td>Weapons</td>
+        <td><%= @deck.weapon_count %></td>
+      </tr>
+      <tr>
+        <td>Spells</td>
+        <td><%= @deck.spell_count %></td>
+      </tr>
+      <tr>
+        <td>Armor</td>
+        <td><%= @deck.armor_count %></td>
+      </tr>
+      <tr>
+        <td>Items</td>
+        <td><%= @deck.item_count %></td>
+      </tr>
+      <tr>
+        <td>Allies</td>
+        <td><%= @deck.ally_count %></td>
+      </tr>
+      <tr>
+        <td>Blessings</td>
+        <td><%= @deck.blessing_count %></td>
+      </tr>
+    </table>
+  </div>
 
-<div id="all-cards" class="card-list">
-  <div class="list-group">
-    <%= render partial: 'card_list', object: Card.all, locals: { action: 'add' } %>
+  <div id="current-counts" class="panel panel-default">
+    <div class="panel-heading">Current Counts</div>
+    <table class="table">
+      <tr>
+        <td>Weapons</td>
+        <td><%= @deck.cards.weapons.count %></td>
+      </tr>
+      <tr>
+        <td>Spells</td>
+        <td><%= @deck.cards.spells.count %></td>
+      </tr>
+      <tr>
+        <td>Armor</td>
+        <td><%= @deck.cards.armors.count %></td>
+      </tr>
+      <tr>
+        <td>Items</td>
+        <td><%= @deck.cards.items.count %></td>
+      </tr>
+      <tr>
+        <td>Allies</td>
+        <td><%= @deck.cards.allies.count %></td>
+      </tr>
+      <tr>
+        <td>Blessings</td>
+        <td><%= @deck.cards.blessings.count %></td>
+      </tr>
+      <tr>
+        <td>Loot</td>
+        <td><%= @deck.cards.loots.count %></td>
+      </tr>
+    </table>
   </div>
 </div>
 
-
-<div id="deck-cards" class="card-list">
-  <div class="list-group">
-    <%= render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' } %>
+<div id="cards">
+  <div id="card-list-filter" class="input-group input-group-lg">
+    <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
   </div>
 
+  <div id="all-cards" class="card-list">
+    <div class="list-group">
+      <%= render partial: 'card_list', object: Card.all, locals: { action: 'add' } %>
+    </div>
+  </div>
+
+
+  <div id="deck-cards" class="card-list">
+    <div class="list-group">
+      <%= render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' } %>
+    </div>
+
+  </div>
 </div>
