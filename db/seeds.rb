@@ -14,7 +14,7 @@ players.each do |player|
   Player.create name: player
 end
 
-card_types = %w(Weapon Spell Armor Item Ally Blessing Loot)
+card_types = CardType::VALID_TYPES
 
 card_types.each do |type|
   CardType.create name: type

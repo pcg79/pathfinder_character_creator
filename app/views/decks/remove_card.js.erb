@@ -1,1 +1,6 @@
-$("div#deck-cards a.list-group-item#card-<%= @card.id %>").remove()
+$("div#deck-cards a.list-group-item#card-<%= @card.id %>").remove();
+
+var $count_td = $('div#current-counts tr#<%= @card_type %> td.count');
+var count = parseInt($count_td.html());
+
+$count_td.html(count - 1);

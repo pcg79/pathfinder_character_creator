@@ -1,1 +1,6 @@
 $('div#deck-cards .list-group').append('<%= link_to display_data(@card), remove_card_deck_path(@deck), class: "list-group-item", id: "card-#{@card.id}", data: { "card_id" => @card.id } %>');
+
+var $count_td = $('div#current-counts tr#<%= @card_type %> td.count');
+var count = parseInt($count_td.html());
+
+$count_td.html(count + 1);

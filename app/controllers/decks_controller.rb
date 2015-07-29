@@ -23,12 +23,14 @@ class DecksController < ApplicationController
 
   def add_card
     @deck.cards << @card
+    @card_type = @card.card_type.name.downcase
   end
 
   def remove_card
     if card = @deck.card_lists.where(card_id: @card.id).first
       card.destroy
     end
+    @card_type = @card.card_type.name.downcase
   end
 
   def filter_cards
