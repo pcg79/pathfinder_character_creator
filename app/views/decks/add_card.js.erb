@@ -1,4 +1,4 @@
-$('div#deck-cards .list-group').append('<%= link_to display_data(@card), remove_card_deck_path(@deck), class: "list-group-item", id: "card-#{@card.id}", data: { "card_id" => @card.id, "action" => "remove" } %>');
+$('div#deck-cards .list-group').append('<%= render partial: "card", object: @card, locals: { action: "remove" } %>');
 
 $('div#deck-cards .list-group p').remove();
 
