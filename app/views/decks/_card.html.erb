@@ -1,1 +1,1 @@
-<%= link_to display_data(card), remove_card_deck_path(@deck), class: "list-group-item", id: "card-#{card.id}", data: { "card_id" => card.id, "action" => action } %>
+<%= link_to display_data(card), path, class: "list-group-item", id: "card-#{card.id}", data: { "card_id" => card.id, "action" => action } %>

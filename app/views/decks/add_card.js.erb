@@ -1,4 +1,4 @@
-$('div#deck-cards .list-group').append('<%= render partial: "card", object: @card, locals: { action: "remove" } %>');
+$('div#deck-cards .list-group').append('<%= render partial: "card", object: @card, locals: { path: remove_card_deck_path(@deck), action: "remove" } %>');
 
 $('div#deck-cards .list-group p').remove();
 
