@@ -12,7 +12,14 @@ $('div').on 'dblclick', 'a.list-group-item', (event) ->
 
   $card = $(this)
 
-  $.post $card.attr('href'), card_id: $card.data('card-id')
+  $.post $card.attr('href'), card_id: $card.data('card-id'), (data) ->
+    if $card.data('action') == "remove"
+      $card.remove()
+
+      $deck_list = $('div#deck-cards div.list-group');
+
+      if $deck_list.children().size() == 0
+        $deck_list.append('<p>This list is empty.  Add some cards!</p>');
 
   false
 
