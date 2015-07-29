@@ -7,8 +7,7 @@ $('div').on 'dblclick', 'a.list-group-item', (event) ->
 
   card = $(this)
 
-  $.post card.attr('href'), card_id: card.data('card-id'), (data) ->
-    $('div#deck-cards .list-group').html(data)
+  $.post card.attr('href'), card_id: card.data('card-id')
 
   false
 

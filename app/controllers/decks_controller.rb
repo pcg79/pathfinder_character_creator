@@ -23,8 +23,6 @@ class DecksController < ApplicationController
 
   def add_card
     @deck.cards << @card
-
-    render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' }
   end
 
   def remove_card

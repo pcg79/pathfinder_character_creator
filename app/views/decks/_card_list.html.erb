@@ -1,6 +1,6 @@
 <%- if card_list.present? -%>
   <%- card_list.each do |card| -%>
-    <%- path = action == 'remove' ? remove_card_deck_path(@deck) : add_card_deck_path(@deck) %>
+    <%- path = action == 'remove' ? remove_card_deck_path(@deck) : add_card_deck_path(@deck) -%>
     <%= link_to display_data(card), path, class: "list-group-item", data: { "card_id" => card.id } %>
   <%- end -%>
 <%- else -%>
