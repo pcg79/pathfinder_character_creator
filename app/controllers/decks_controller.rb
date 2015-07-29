@@ -26,9 +26,9 @@ class DecksController < ApplicationController
   end
 
   def remove_card
-    @deck.card_lists.where(card_id: @card.id).first.destroy
-
-    render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' }
+    if card = @deck.card_lists.where(card_id: @card.id).first
+      card.destroy
+    end
   end
 
   def filter_cards
