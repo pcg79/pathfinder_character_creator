@@ -34,7 +34,7 @@ class DecksController < ApplicationController
   def filter_cards
     q = "%#{params[:q].gsub(/ /, '%')}%"
 
-    cards = Card.joins(:adventure_deck).joins(:card_type).where(["cards.name like ? OR adventure_decks.number like ? OR card_types.name like ?", q, q, q])
+    cards = Card.by_name.joins(:adventure_deck).joins(:card_type).where(["cards.name like ? OR adventure_decks.number like ? OR card_types.name like ?", q, q, q])
 
     render partial: 'card_list', object: cards, locals: { action: 'add' }
   end
