@@ -1,29 +1,29 @@
 <table class="table">
-  <tr id="weapon" class="<%= card_type_status_class(deck, 'weapons') %>">
+  <tr id="weapons" class="<%= card_type_status_class(deck, 'weapons') %>">
     <td>Weapons</td>
     <td class="count"><%= deck.cards.weapons.count %></td>
   </tr>
-  <tr id="spells">
+  <tr id="spells" class="<%= card_type_status_class(deck, 'spells') %>">
     <td>Spells</td>
     <td class="count"><%= deck.cards.spells.count %></td>
   </tr>
-  <tr id="armor">
+  <tr id="armors" class="<%= card_type_status_class(deck, 'armors') %>">
     <td>Armor</td>
     <td class="count"><%= deck.cards.armors.count %></td>
   </tr>
-  <tr id="item">
+  <tr id="items" class="<%= card_type_status_class(deck, 'items') %>">
     <td>Items</td>
     <td class="count"><%= deck.cards.items.count %></td>
   </tr>
-  <tr id="ally">
+  <tr id="allies" class="<%= card_type_status_class(deck, 'allies') %>">
     <td>Allies</td>
     <td class="count"><%= deck.cards.allies.count %></td>
   </tr>
-  <tr id="blessing">
+  <tr id="blessings" class="<%= card_type_status_class(deck, 'blessings') %>">
     <td>Blessings</td>
     <td class="count"><%= deck.cards.blessings.count %></td>
   </tr>
-  <tr id="loot">
+  <tr id="loots" class="<%= card_type_status_class(deck, 'loots') %>">
     <td>Loot</td>
     <td class="count"><%= deck.cards.loots.count %></td>
   </tr>
