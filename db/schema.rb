@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150728005533) do
 
   add_index "cards", ["adventure_deck_id"], name: "index_cards_on_adventure_deck_id"
   add_index "cards", ["card_type_id"], name: "index_cards_on_card_type_id"
+  add_index "cards", ["name"], name: "index_cards_on_name"
 
   create_table "characters", force: :cascade do |t|
     t.integer  "weapons_count",   default: 0, null: false
