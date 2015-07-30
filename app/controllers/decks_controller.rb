@@ -42,7 +42,9 @@ class DecksController < ApplicationController
   private
 
   def find_deck
-    @deck = Deck.find params[:id]
+    @deck = Deck.find_by_id params[:id]
+
+    redirect_to root_path, error: "Deck not found" unless @deck
   end
 
   def find_card
