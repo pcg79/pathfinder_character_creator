@@ -1,6 +1,1 @@
-var $count_td = $('div#current-counts tr#<%= status_type(@card.type) %> td.count');
-var count = parseInt($count_td.html());
-
-$count_td.html(count - 1);
-
-$('div#current-counts tr#<%= status_type(@card.type) %>').removeClass().addClass('<%= card_type_status_class(@deck, @card.type) %>');
+updateCount('<%= status_type(@card.type) %>', 'remove', '<%= card_type_status_class(@deck, @card.type) %>');

@@ -24,3 +24,23 @@ var delay = (function(){
     timer = setTimeout(callback, ms);
   };
 })();
+
+var updateCount = function(cardType, action, statusClass) {
+  console.log('cardType', cardType);
+  console.log('action', action);
+  console.log('statusClass', statusClass);
+
+  var $countTr = $('div#current-counts tr#' + cardType);
+  var $countTd = $('td.count', $countTr);
+  var count = parseInt($countTd.html());
+  var newCount;
+
+  if (action == "add")
+    newCount = count + 1;
+  else
+    newCount = count - 1;
+
+  $countTd.html(newCount);
+
+  $countTr.removeClass().addClass(statusClass);
+};
