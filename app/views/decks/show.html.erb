@@ -46,7 +46,7 @@
 
   <div id="all-cards" class="card-list">
     <div class="list-group">
-      <%= render partial: 'card_list', object: Card.all, locals: { action: 'add' } %>
+      <%= render partial: 'card_list', object: Card.by_name, locals: { action: 'add' } %>
     </div>
   </div>
 
