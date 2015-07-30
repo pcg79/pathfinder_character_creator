@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  weapon_count: 1
-  spell_count: 1
-  armor_count: 1
-  item_count: 1
-  ally_count: 1
-  blessing_count: 1
+  weapons_count: 1
+  spells_count: 1
+  armors_count: 1
+  items_count: 1
+  allies_count: 1
+  blessings_count: 1
   name: MyString
 
 two:
-  weapon_count: 1
-  spell_count: 1
-  armor_count: 1
-  item_count: 1
-  ally_count: 1
-  blessing_count: 1
+  weapons_count: 1
+  spells_count: 1
+  armors_count: 1
+  items_count: 1
+  allies_count: 1
+  blessings_count: 1
   name: MyString

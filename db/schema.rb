@@ -46,28 +46,28 @@ ActiveRecord::Schema.define(version: 20150728005533) do
   add_index "cards", ["card_type_id"], name: "index_cards_on_card_type_id"
 
   create_table "characters", force: :cascade do |t|
-    t.integer  "weapon_count",   default: 0, null: false
-    t.integer  "spell_count",    default: 0, null: false
-    t.integer  "armor_count",    default: 0, null: false
-    t.integer  "item_count",     default: 0, null: false
-    t.integer  "ally_count",     default: 0, null: false
-    t.integer  "blessing_count", default: 0, null: false
+    t.integer  "weapons_count",   default: 0, null: false
+    t.integer  "spells_count",    default: 0, null: false
+    t.integer  "armors_count",    default: 0, null: false
+    t.integer  "items_count",     default: 0, null: false
+    t.integer  "allies_count",    default: 0, null: false
+    t.integer  "blessings_count", default: 0, null: false
     t.string   "name"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "decks", force: :cascade do |t|
     t.integer  "character_id"
     t.integer  "player_id"
-    t.integer  "weapon_count"
-    t.integer  "spell_count"
-    t.integer  "armor_count"
-    t.integer  "item_count"
-    t.integer  "ally_count"
-    t.integer  "blessing_count"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "weapons_count"
+    t.integer  "spells_count"
+    t.integer  "armors_count"
+    t.integer  "items_count"
+    t.integer  "allies_count"
+    t.integer  "blessings_count"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "decks", ["character_id"], name: "index_decks_on_character_id"

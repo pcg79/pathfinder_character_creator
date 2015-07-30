@@ -29,30 +29,30 @@ end
 characters = %w(Alahazra Damiel Feiya Jirelle Lem Lini Lirianne Merisiel Oloch Ranzak Seltyiel Valeros)
 
 card_limits = {
-  # "Alahazra" => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  "Damiel"     => { weapon_count: 1, spell_count: 2, armor_count: 1, item_count: 6, ally_count: 1, blessing_count: 4 },
-  # "Feiya"    => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Jirelle"  => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Lem"      => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Lini"     => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Lirianne" => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Merisiel" => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Oloch"    => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  # "Ranzak"   => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: },
-  "Seltyiel"   => { weapon_count: 4, spell_count: 4, armor_count: 1, item_count: 1, ally_count: 1, blessing_count: 4 }
-  # "Valeros"  => { weapon_count: , spell_count: , armor_count: , item_count: , ally_count: , blessing_count: }
+  # "Alahazra" => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  "Damiel"     => { weapons_count: 1, spells_count: 2, armors_count: 1, items_count: 6, allies_count: 1, blessings_count: 4 },
+  # "Feiya"    => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Jirelle"  => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Lem"      => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Lini"     => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Lirianne" => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Merisiel" => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Oloch"    => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  # "Ranzak"   => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: },
+  "Seltyiel"   => { weapons_count: 4, spells_count: 4, armors_count: 1, items_count: 1, allies_count: 1, blessings_count: 4 }
+  # "Valeros"  => { weapons_count: , spells_count: , armors_count: , items_count: , allies_count: , blessings_count: }
 }
 
 characters.each do |character|
   limits = card_limits[character]
   Character.new(name: character).tap do |char|
     if limits
-      char.weapon_count = limits[:weapon_count]
-      char.spell_count  = limits[:spell_count]
-      char.armor_count  = limits[:armor_count]
-      char.item_count   = limits[:item_count]
-      char.ally_count   = limits[:ally_count]
-      char.blessing_count = limits[:blessing_count]
+      char.weapons_count = limits[:weapons_count]
+      char.spells_count  = limits[:spells_count]
+      char.armors_count  = limits[:armors_count]
+      char.items_count   = limits[:items_count]
+      char.allies_count   = limits[:allies_count]
+      char.blessings_count = limits[:blessings_count]
     end
 
      char.save!

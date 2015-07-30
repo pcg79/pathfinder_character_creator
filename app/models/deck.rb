@@ -8,11 +8,11 @@ class Deck < ActiveRecord::Base
   before_create :set_default_card_limits_from_character
 
   def set_default_card_limits_from_character
-    self.weapon_count   = character.weapon_count
-    self.spell_count    = character.spell_count
-    self.armor_count    = character.armor_count
-    self.item_count     = character.item_count
-    self.ally_count     = character.ally_count
-    self.blessing_count = character.blessing_count
+    self.weapons_count   = character.weapons_count
+    self.spells_count    = character.spells_count
+    self.armors_count    = character.armors_count
+    self.items_count     = character.items_count
+    self.allies_count    = character.allies_count
+    self.blessings_count = character.blessings_count
   end
 end
