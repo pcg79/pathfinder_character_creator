@@ -34,3 +34,15 @@ div#current-counts {
   float: right;
   width: 45%
 }
+
+tr.valid {
+  background-color: green;
+}
+
+tr.over {
+  background-color: red;
+}
+
+tr.under {
+  background-color: yellow;
+}
