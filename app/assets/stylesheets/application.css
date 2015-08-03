@@ -21,3 +21,22 @@ body {
 .starter-template {
   padding: 40px 15px;
 }
+
+#flash_notice {
+  margin-top: 1em;
+}
+
+.message {
+  border-radius: 4px;
+  width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notice {
+  background-color: #eff3da;
+  color: #666666;
+  line-height: 16px;
+  padding: 20px 16px 16px 60px;
+}
