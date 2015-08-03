@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards ]
+  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards, :destroy ]
   before_filter :find_card, only: [ :add_card, :remove_card ]
 
   def index
@@ -37,6 +37,12 @@ class DecksController < ApplicationController
     cards = Card.by_name.joins(:adventure_deck).joins(:card_type).where(["cards.name like ? OR adventure_decks.number like ? OR card_types.name like ?", q, q, q])
 
     render partial: 'card_list', object: cards, locals: { action: 'add' }
+  end
+
+  def destroy
+    @deck.destroy
+
+    redirect_to decks_path, notice: "Deck deleted"
   end
 
   private

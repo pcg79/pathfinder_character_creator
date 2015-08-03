@@ -46,3 +46,12 @@ tr.over {
 tr.under {
   background-color: yellow;
 }
+
+td.delete {
+  width: 100px;
+
+  img {
+    width: 20px;
+    height: auto;
+  }
+}

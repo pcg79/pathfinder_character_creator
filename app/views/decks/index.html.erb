@@ -11,6 +11,7 @@
         <tr>
           <td><%= deck.player.name %> </td>
           <td><%= link_to deck.character.name, deck_path(deck) %> </td>
+          <td class="delete"><%= link_to image_tag('trashcan.png'), deck_path(deck), method: :delete %></td>
         </tr>
       <%- end -%>
     </table>
