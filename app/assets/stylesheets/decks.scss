@@ -16,11 +16,6 @@ div#deck-cards {
   float: right;
 }
 
-div#card-list-filter {
-  width: 45%;
-  margin-bottom: 1em;
-}
-
 div#deck-info {
   height: 315px;
 }
@@ -67,4 +62,20 @@ div#player-select {
 
 p.submit {
   padding-top: 2em;
+}
+
+div#middle-section {
+  height: 100px;
+  padding-top: 1em;
+}
+
+div#card-list-filter {
+  float: left;
+  width: 45%;
+  margin-bottom: 1em;
+}
+
+div#default-deck {
+  float: right;
+  width: 45%
 }

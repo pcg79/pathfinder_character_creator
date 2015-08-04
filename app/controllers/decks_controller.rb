@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards, :destroy ]
+  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards, :destroy, :replace_with_defaults ]
   before_filter :find_card, only: [ :add_card, :remove_card ]
 
   def index
@@ -43,6 +43,27 @@ class DecksController < ApplicationController
     @deck.destroy
 
     redirect_to decks_path, notice: "Deck deleted"
+  end
+
+  # Maybe instead I create a user called "Default" and that user gets a deck
+  # for every character w/ the default lists.  Make it via seeds.rb.
+  # Then here I just pull up that person's deck assign a copy of the cards
+  # @deck.
+  def replace_with_defaults
+    require 'suggested_decks'
+
+    @deck.cards = []
+
+    card_list = SuggestedDecks::CARD_LISTS[@deck.character.name]
+
+    card_list.keys.each do |type|
+      card_list[type].each do |card_name|
+        card = Card.joins(:card_type).where(name: card_name).where(["card_types.name = ?", type.capitalize]).first
+        @deck.cards << card
+      end
+    end
+
+    redirect_to deck_path(@deck), notice: "Cards replaced by defaults"
   end
 
   private

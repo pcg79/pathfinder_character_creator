@@ -34,14 +34,22 @@
   </div>
 
   <div id="current-counts" class="panel panel-default">
-    <div class="panel-heading">Current Counts</div>
-      <%= render partial: 'count_table', locals: { deck: @deck } %>
+    <div class="panel-heading">
+      Current Counts
+    </div>
+    <%= render partial: 'count_table', locals: { deck: @deck } %>
   </div>
 </div>
 
 <div id="cards">
-  <div id="card-list-filter" class="input-group input-group-lg">
-    <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
+  <div id="middle-section">
+    <div id="card-list-filter" class="input-group input-group-lg">
+      <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
+    </div>
+
+    <div id="default-deck">
+      <%= link_to "Replace Deck with Suggested Defaults", replace_with_defaults_deck_path(@deck), class: "btn btn-warning", role: "button" %>
+    </div>
   </div>
 
   <div id="all-cards" class="card-list">
@@ -49,7 +57,6 @@
       <%= render partial: 'card_list', object: Card.by_name, locals: { action: 'add' } %>
     </div>
   </div>
-
 
   <div id="deck-cards" class="card-list">
     <div class="list-group">

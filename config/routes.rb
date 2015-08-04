@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post 'add_card'
       post 'remove_card'
       get  'filter_cards'
+      get  'replace_with_defaults'
     end
   end
 
