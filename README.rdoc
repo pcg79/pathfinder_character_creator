@@ -2,6 +2,7 @@
 
 ** TODO: **
 
-* Use confirmation dialog on "replace with defaults" button
+* Use confirmation dialog on "replace with defaults" and "clear cards" buttons
+* Make both actions refresh card list via ajax instead of whole page refresh
 * Sort both card lists by type
 * Click on row in index goes to show page
