@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards, :destroy, :replace_with_defaults ]
+  before_filter :find_deck, only: [ :show, :add_card, :remove_card, :filter_cards, :destroy, :replace_with_defaults, :clear_cards ]
   before_filter :find_card, only: [ :add_card, :remove_card ]
 
   def index
@@ -64,6 +64,12 @@ class DecksController < ApplicationController
     end
 
     redirect_to deck_path(@deck), notice: "Cards replaced by defaults"
+  end
+
+  def clear_cards
+    @deck.cards = []
+
+    redirect_to deck_path(@deck), notice: "Cards cleared"
   end
 
   private

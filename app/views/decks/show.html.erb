@@ -49,6 +49,7 @@
 
     <div id="default-deck">
       <%= link_to "Replace Deck with Suggested Defaults", replace_with_defaults_deck_path(@deck), class: "btn btn-warning", role: "button" %>
+      <%= link_to "Clear all cards", clear_cards_deck_path(@deck), class: "btn btn-danger", role: "button" %>
     </div>
   </div>
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post 'remove_card'
       get  'filter_cards'
       get  'replace_with_defaults'
+      get  'clear_cards'
     end
   end
 
