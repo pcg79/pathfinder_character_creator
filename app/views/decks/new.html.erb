@@ -1,7 +1,7 @@
 <h3>Create a new deck!  First choose a player and a character.  You'll get to add cards later.</h3>
 
 <%= form_for @deck do |f| %>
-  <div id="player-select">
+  <div id="player-select" class="left">
     <p>Player</p>
     <%= collection_select(:deck, :player_id, Player.all, :id, :name, prompt: true) %>
   </div>

@@ -1,9 +1,9 @@
 <p class="lead">
   <%= @deck.character.name %> Played By <%= @deck.player.name %>
-</p>
+</h2>
 
 <div id="deck-info">
-  <div id="card-limits" class="panel panel-default">
+  <div id="card-limits" class="panel panel-default left">
     <div class="panel-heading">Card Limits</div>
     <table class="table">
       <tr>
@@ -33,7 +33,7 @@
     </table>
   </div>
 
-  <div id="current-counts" class="panel panel-default">
+  <div id="current-counts" class="panel panel-default right">
     <div class="panel-heading">
       Current Counts
     </div>
@@ -43,23 +43,23 @@
 
 <div id="cards">
   <div id="middle-section">
-    <div id="card-list-filter" class="input-group input-group-lg">
+    <div id="card-list-filter" class="input-group input-group-lg left">
       <input data-filter-path="<%= filter_cards_deck_path(@deck) %>" type="text" id="card-list-filter" class="form-control" placeholder="Filter">
     </div>
 
-    <div id="default-deck">
+    <div id="default-deck" class="right">
       <%= link_to "Replace Deck with Suggested Defaults", replace_with_defaults_deck_path(@deck), class: "btn btn-warning", role: "button" %>
       <%= link_to "Clear all cards", clear_cards_deck_path(@deck), class: "btn btn-danger", role: "button" %>
     </div>
   </div>
 
-  <div id="all-cards" class="card-list">
+  <div id="all-cards" class="card-list left">
     <div class="list-group">
       <%= render partial: 'card_list', object: Card.by_name, locals: { action: 'add' } %>
     </div>
   </div>
 
-  <div id="deck-cards" class="card-list">
+  <div id="deck-cards" class="card-list right">
     <div class="list-group">
       <%= render partial: 'card_list', object: @deck.cards, locals: { action: 'remove' } %>
     </div>

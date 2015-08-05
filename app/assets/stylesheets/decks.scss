@@ -8,11 +8,11 @@ div.card-list {
   overflow: auto;
 }
 
-div#all-cards {
+div.left {
   float: left;
 }
 
-div#deck-cards {
+.right {
   float: right;
 }
 
@@ -21,12 +21,10 @@ div#deck-info {
 }
 
 div#card-limits {
-  float: left;
   width: 45%;
 }
 
 div#current-counts {
-  float: right;
   width: 45%
 }
 
@@ -56,7 +54,6 @@ a#new-deck {
 }
 
 div#player-select {
-  float: left;
   width: 20%;
 }
 
@@ -70,12 +67,10 @@ div#middle-section {
 }
 
 div#card-list-filter {
-  float: left;
   width: 45%;
   margin-bottom: 1em;
 }
 
 div#default-deck {
-  float: right;
   width: 45%
 }
