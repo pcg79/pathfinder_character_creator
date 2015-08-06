@@ -32,3 +32,10 @@ $('input#card-list-filter').on 'keyup', (event) ->
       $('div#all-cards .list-group').html(data)
 
   , 250
+
+$('div#default-deck').on 'click', 'a.btn', (event) ->
+  answer = confirm('This will replace all cards in your deck.  Is that OK?')
+
+  if !answer
+    event.preventDefault
+    false
