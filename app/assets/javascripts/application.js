@@ -26,10 +26,6 @@ var delay = (function(){
 })();
 
 var updateCount = function(cardType, action, statusClass) {
-  console.log('cardType', cardType);
-  console.log('action', action);
-  console.log('statusClass', statusClass);
-
   var $countTr = $('div#current-counts tr#' + cardType);
   var $countTd = $('td.count', $countTr);
   var count = parseInt($countTd.html());
